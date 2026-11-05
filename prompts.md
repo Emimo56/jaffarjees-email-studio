@@ -31,3 +31,11 @@ A numbered record of the user's prompts in this session, in order.
 14. commit this
 
 15. create a file prompts and add my prompts to it. starting from the very beginning and number them also. and after file is written add some separtors to know file was created and committed and now this step is done.
+
+---
+File created. ✅
+---
+Committed (c411933). ✅
+---
+Step done.
+---
