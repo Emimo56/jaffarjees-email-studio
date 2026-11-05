@@ -6,7 +6,7 @@
 
 - **Campaign name:** "Welcome Back for Eid" — Jafferjees Eid Sale Re-engagement
 - **Summary:** A 4-week, email-only sequence inviting past Jafferjees customers back to shop new arrivals and Eid gifting pieces before Eid-ul-Fitr 2027.
-- **Primary objective:** Re-engage past customers and drive them to the sale collection page, with a planning benchmark of 35% open rate and 8% click-through across the sequence.
+- **Primary objective:** Re-engage past customers and drive them to the sale collection page by February 28, 2027 (end of the 4-week sequence), with a planning benchmark of 35% open rate and 8% click-through across the sequence.
 - **Secondary objectives:**
   - Remind past customers of complimentary gift wrapping and engraving ahead of Eid gifting.
   - Introduce new arrivals (handbags, clutches, wallets, keyrings) to customers who last bought a different category.
@@ -57,7 +57,7 @@ Campaign window: **Monday, February 1 – Sunday, February 28, 2027** (4 weeks),
 | 1 | Feb 1–7 | Email 1 — "New arrivals for Eid, just for you" (segmented: Men / Women / All) | Email | Introduces new arrivals per segment; soft open, no sale pressure | Draft |
 | 2 | Feb 8–14 | Email 2 — "The Art of Gifting" (gift sets, wrapping, engraving) | Email | Same message to all three segments; highlights complimentary gift wrapping and engraving | Draft |
 | 3 | Feb 15–21 | Email 3 — Eid sale announcement, segmented product picks | Email | Sale goes live; each segment gets its own featured pieces | Draft |
-| 4 | Feb 22–28 | Email 4 — Last call before Eid travel/shipping cutoff + restoration service reminder | Email | Practical close: plan ahead given up to 15 working days international delivery; mention restoration service for existing owners | Draft |
+| 4 | Feb 22–28 | Email 4 — Last call before Eid travel/shipping cutoff + restoration service reminder (segmented: Men / Women / All) | Email | Practical close: plan ahead given up to 15 working days international delivery; mention restoration service for existing owners | Draft |
 
 Dependency: Email 3 (sale announcement) depends on the sale collection page being live and linked correctly before send.
 
