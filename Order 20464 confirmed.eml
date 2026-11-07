@@ -1,0 +1,778 @@
+Delivered-To: emimo56@gmail.com
+Received: by 2002:a05:7108:c86:b0:45a:a4f7:c0e with SMTP id pm6csp1893893gdb;
+        Sat, 10 May 2025 13:35:43 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHF6COxYZtLhjVOd3Kj6KGqDCAUIgbCcTjQjxnjr67ioqA+rYWjLOeJar9Bu8EGBBS4xOpl
+X-Received: by 2002:a05:622a:ca:b0:477:6eca:b40c with SMTP id d75a77b69052e-49452716d78mr143258351cf.1.1746909342872;
+        Sat, 10 May 2025 13:35:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1746909342; cv=none;
+        d=google.com; s=arc-20240605;
+        b=JFoY1RDxndjy3M2mmTyCnTvrUR2d4n/7GxDzhyozb2OmjDjx16ZdS6d9PrxbD3BNsR
+         wJ+8SU5He8on8hIYTIki8FM3vQ9dyBly6dR77WpRv/YKYS4mdmjX4OYZxzZGj7DJW8p5
+         1DHoHDLN48o4JHW4Z+hu7e3hYGH9ZKsrdwJRDkqwZHLFrdCKN3Y+Uu04C6fsFI6hgpZk
+         okCGUg3YcCXG04B3Fa2p4M8t9SMl8vB5dXs7Sixj/LeS78yqvdt2Kipgmiuoo2uiZ+6y
+         mIl46KBYl+WLy5pYAAoZDQwD+u8v7Mj6Xk1V14BvPMlu348SBm1bda77wa60jM4kPzKI
+         8p6Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:feedback-id:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=e4hDP3+/WCi37sHka2wz5RlUtQLnjn0i+h/015zss+o=;
+        fh=+/YBxRrFeEpcWcMc/flgsKLHIjRGrBW2e1QYN4zUS6E=;
+        b=Zi4TomFZXGT3ZBGmmBewgSc97uZXrASB/q6tU64cHZNOsl3RmOaok7g9474Ov0/eE3
+         B3hxysbnh4GQvMlw9ugf1S2gIVoHdevoAWhEwq9tTH2QUOyhQcWF8D2kP1Kwzo8to4+d
+         ZDbhkUbMalbMAdBMQNrogyI9mXuUJ+lm3Ol1XDA48662Ru/bonfPu1ycqlpwAXHOBtVl
+         ZRWzdAMDHANnpEONL6Fpxtvn6nvE6NWz/PHi7F+NT2F4rgmWE3wX540lO3+NZkWWK+oR
+         GIMLp6UOi6DlVu+uwBodXrDGwQlXDxAGrcnj2Xa3Uzq3543azdNX3a2kFPE+I49K3GRr
+         /zoA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@jafferjees.com header.s=uda header.b=TU72UHDm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="WSDyTp/i";
+       spf=pass (google.com: domain of bounces+16463654-1d07-emimo56=gmail.com@maileruda.jafferjees.com designates 149.72.125.57 as permitted sender) smtp.mailfrom="bounces+16463654-1d07-emimo56=gmail.com@maileruda.jafferjees.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jafferjees.com
+Return-Path: <bounces+16463654-1d07-emimo56=gmail.com@maileruda.jafferjees.com>
+Received: from o32.mailer.shopify.com (o32.mailer.shopify.com. [149.72.125.57])
+        by mx.google.com with ESMTPS id d75a77b69052e-49452458c69si51240941cf.40.2025.05.10.13.35.42
+        for <emimo56@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 10 May 2025 13:35:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+16463654-1d07-emimo56=gmail.com@maileruda.jafferjees.com designates 149.72.125.57 as permitted sender) client-ip=149.72.125.57;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@jafferjees.com header.s=uda header.b=TU72UHDm;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="WSDyTp/i";
+       spf=pass (google.com: domain of bounces+16463654-1d07-emimo56=gmail.com@maileruda.jafferjees.com designates 149.72.125.57 as permitted sender) smtp.mailfrom="bounces+16463654-1d07-emimo56=gmail.com@maileruda.jafferjees.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=jafferjees.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jafferjees.com;
+	h=content-type:from:mime-version:subject:feedback-id:to:cc:content-type:
+	feedback-id:from:subject:to;
+	s=uda; bh=e4hDP3+/WCi37sHka2wz5RlUtQLnjn0i+h/015zss+o=;
+	b=TU72UHDmziaGguOynTfl5ckqPZis80uFnjQJHuF4ZakY0CQa2CYEUOGbR0zKmEU04FNY
+	8GydBZflhtr2nsBNU0heVrSMVC+Hre8YFqBdUN0lQBvksN10Plr4cYBu4E3BZ8dStoHLHE
+	yhYvxH/zuz+wZ8MsWFQ0O/PU3lRWuQnXAps37+Gj/sSDoYNV1dqDiUQKgtHDBjv2YJX26B
+	A94sSshD9966Sb6BsxFCR6neTrigYQ87AcbNjspNnY3VgMXTto3z8nX4IJxSCsN0ynYnDv
+	8IfMhOl2Y7pE+XN765eH9wF20z/hfWesQ0HPNIWmlijJbxzFCGjdfzZ739sL3VXA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:feedback-id:to:cc:content-type:
+	feedback-id:from:subject:to;
+	s=smtpapi; bh=e4hDP3+/WCi37sHka2wz5RlUtQLnjn0i+h/015zss+o=;
+	b=WSDyTp/i/iYX45AJC0TjjchpNMOlhE4JEEhb9JLCg9rJWhMB8urVvI5F9qeQWaPd2hER
+	0tWsw/PtaPG1qlBRNki+O30BsL8bmhwxLCb3D91yOL058S/rgLSj6lccTO99X0AJOZEOZf
+	0RPf2vZVMAJTbT5wjAdunZlhete1akCa0=
+Received: by recvd-545d4d4647-gqskb with SMTP id recvd-545d4d4647-gqskb-1-681FB89D-35
+	2025-05-10 20:35:41.986593901 +0000 UTC m=+2759229.514739888
+Received: from MTY0NjM2NTQ (unknown)
+	by geopod-ismtpd-15 (SG) with HTTP
+	id _sPPBZDHRSiIBvLY6TZY8g
+	Sat, 10 May 2025 20:35:41.945 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=a4964afc2fc15cd2412a50bc09d03ed34055390c5c45765917d03151c22f
+Date: Sat, 10 May 2025 20:35:42 +0000 (UTC)
+From: Jafferjees Store <customerservice@jafferjees.com>
+Mime-Version: 1.0
+Message-ID: <E1030004-183E44CA7579BB73-F0A86491@shopify.com>
+Subject: Order 20464 confirmed
+Feedback-Id: s_63929090243:shopify
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Eg2c+eSuEaWLLT9FwHfEhTFXRgNcycZyKKLlKDIE3q5ZfW8+3Njyd9c63m?=
+ =?us-ascii?Q?gpUNbi=2F35opumIUmDkYqs9d5z+Vrn23uSLBN54W?=
+ =?us-ascii?Q?Jh+SFCEh=2Fsqv7heB9ItClOnB3vbIWeAkzdRzy7d?=
+ =?us-ascii?Q?9c5ByV19LgLebShh1Gf7IW9laop5h4E6Nh94xW0?=
+ =?us-ascii?Q?hw10=2FGh73D3JuJiAnp4D42vsNoh4N0HrHEhqFdY?=
+ =?us-ascii?Q?HzNcyeabNfI0ERAZalpsKk1j5iXbZFvnDHx1eWU?= =?us-ascii?Q?=2FseE?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDITwp3LLcgXu9gv?=
+ =?us-ascii?Q?F1Oq5oTf1VY9MM=2F=2FZCviT=2FP37sq39HWlcjsDfB0?=
+ =?us-ascii?Q?HmxMDSxc3Me=2F+gS2TKcu1VFuwuw2xj0+DthU=2FOi?=
+ =?us-ascii?Q?MKpy8c+1JbxV1EjT9fnzT5nMjAJnU53lulLxd=2Fw?=
+ =?us-ascii?Q?mjg5Q1mmsOKSpE2qztVYMA2=2F5ogDGIvFEa6npCI?=
+ =?us-ascii?Q?BiECwX5Zah=2FCtdUlO+1VAgyhQ6awOsG+LynlycP?=
+ =?us-ascii?Q?2+qXFz4ybNjG5DPquSDpqDp0SNdCiRi+4wY9NT2?=
+ =?us-ascii?Q?8hjBfPqyJjmHYkvdpNbA8H8xFlYLNfGqoQHnJDg?=
+ =?us-ascii?Q?qjiRxajvk74CGYi9D+bf8fiSY8wesN3b6ge2NZx?=
+ =?us-ascii?Q?HVe9og=2FIBG0yk8QtmoMECOwoX2zHouPM7Oiea0n?=
+ =?us-ascii?Q?iLb+bBQbMImm3GdMcc372eAsX0LiHA7cSNOX+oY?=
+ =?us-ascii?Q?qhJXeSqKNBZ5NX6Dd+VjCUPDOGTa9ca2QFjW3Ai?=
+ =?us-ascii?Q?kdfUk+hKtkInCM1pzedYTSFox2jYO45toDdWpHL?=
+ =?us-ascii?Q?qTmguijkkuRKisbLUWBv5OUo9TldZ6FqWEiEVSN?=
+ =?us-ascii?Q?9tC1eBq2=2FIiCNzzcZHsx3Ko=2FTwdtofapIVRnVGH?=
+ =?us-ascii?Q?7PLBJv8koNR=2FYQNHb3S1o9iFqUz4DsjJ73+hseA?=
+ =?us-ascii?Q?LsRMZ3DwYUr9o+62+DLz7=2Fk4ok9xDIgo3fbNZMb?=
+ =?us-ascii?Q?uZhIwVybS7foWfCAI6FNqVlaGvCmY8tSSqu7Zkl?=
+ =?us-ascii?Q?oXhMW6jxNJaWxcITNKTMhHo36PRAGjh4FmX9321?=
+ =?us-ascii?Q?rjMeX8U3W8xZFfqfcbuVTL5j8DhrV34fJs0ZLBE?=
+ =?us-ascii?Q?50ebaWNPUDcDrOpCQh=2FNE9VLuxt=2Fp9M4Xc4Y4dS?=
+ =?us-ascii?Q?jEUq4IwwabTmWYgcM3dwIGaAenNfhtpT2FOAMCg?=
+ =?us-ascii?Q?8JeqsyvCESrBIbckLLNcjzuOqxPovXdQm1njKp1?=
+ =?us-ascii?Q?oioLWGEm9FDHEMtgQTspYpRouVhHc9B5J085zxj?=
+ =?us-ascii?Q?6GyC3t50ttN9S8GuVnt3yO7mxNebVvFeQLdPjbI?=
+ =?us-ascii?Q?FMopD2y1jslBpeHgsnMTCXPC1PdKxsGh7+pyOcJ?=
+ =?us-ascii?Q?4b50O3g4BHGzQ6d5Rlf1UE41vf0VW7rejLV4DTI?=
+ =?us-ascii?Q?WbbVwVQgWraqKK6X3bwPaPpVGrPpNZwLopIdIhS?=
+ =?us-ascii?Q?47XLOUeARV1ieUyxeLdcOJdxZt3jxs3gOvzmm77?=
+ =?us-ascii?Q?QG9z0ea2558+QBfPG7ONg+F19DVx7yx+V+YETDW?=
+ =?us-ascii?Q?b1oANh1QxsoXEnGb3w+D30TtkXK5PMv58BneyM8?=
+ =?us-ascii?Q?x3jYkLE=2FPUPqSgwgThYiD4r1o2g4PzLfaI7JG8P?=
+ =?us-ascii?Q?Cd3Xo=2FJNka5gZsf=2Fl=2FHPQC5VZ6opTxfsdRrvB45?=
+ =?us-ascii?Q?t8e6t7YmnmdHvAkqku2g5Q2cSMjbTzu20pPvXx+?=
+ =?us-ascii?Q?q1y5QvmneOc=2F+k=2FG35LCEura+t4uOs2AkbXEiLm?=
+ =?us-ascii?Q?DH8HTlPZtk31AHTavj9ugmPZa=2FNE0yGQsPGULhk?=
+ =?us-ascii?Q?OT8thdnUN6UUsGWAXHyIGInFbjmjaeCW9jZPjBE?=
+ =?us-ascii?Q?=2FoIkzO2la+1pJbBG10cn4LG1R5MvmcO6Q=3D=3D?=
+To: emimo56@gmail.com
+X-Entity-ID: u001.R+jftHpiln0IA86pfm7FlQ==
+
+--a4964afc2fc15cd2412a50bc09d03ed34055390c5c45765917d03151c22f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+Thank you for your purchase!
+
+Shabbir Jivani,
+
+Thank you for your order from Jafferjees estore. Once
+your package ships we will send an email with a link to track
+your order. If you have questions about your order, you can email
+us at customerservice@jafferjees.com.
+
+----------------
+Your Order 20464
+----------------
+
+Placed on 2025-05-11 01:35:38 +0500
+
+Shipping address
+----------------
+
+Shabbir Jivani
+B-506, Shumail Terrace
+Manakjee St, Garden East
+Karachi
+Pakistan
+
+Billing address
+---------------
+
+Shabbir Jivani
+B-506, Shumail Terrace
+Manakjee St, Garden East
+Karachi
+Pakistan
+
+Shipping method
+---------------
+
+Standard
+
+Item
+Qty
+Price
+
+Las Vegas Wallet - Maroon Antique -45
+SKU: 000589-004-020-11
+
+Maroon Antique 45
+
+* Name:
+
+1
+
+Rs.3,825.00
+
+Subtotal
+
+Rs.3,825.00
+
+Shipping
+
+Rs.199.00
+
+Taxes
+
+Rs.0.00
+
+-->
+-->
+
+-->
+
+Grand Total
+
+Rs.4,024.00 PKR
+
+Total paid today
+
+Rs.0.00 PKR
+
+-->
+
+-->
+
+Thank you, jafferjees estore!
+--a4964afc2fc15cd2412a50bc09d03ed34055390c5c45765917d03151c22f
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd"><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"/>
+<style>body {
+margin: 0;
+}
+h1 a:hover {
+font-size: 30px; color: #333;
+}
+h1 a:active {
+font-size: 30px; color: #333;
+}
+h1 a:visited {
+font-size: 30px; color: #333;
+}
+a:hover {
+text-decoration: none;
+}
+a:active {
+text-decoration: none;
+}
+a:visited {
+text-decoration: none;
+}
+.button__text:hover {
+color: #fff; text-decoration: none;
+}
+.button__text:active {
+color: #fff; text-decoration: none;
+}
+.button__text:visited {
+color: #fff; text-decoration: none;
+}
+a:hover {
+color: #1990C6;
+}
+a:active {
+color: #1990C6;
+}
+a:visited {
+color: #1990C6;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 94% !important;
+  }
+  .main-action-cell {
+    float: none !important; margin-right: 0 !important;
+  }
+  .secondary-action-cell {
+    text-align: center; width: 100%;
+  }
+  .header {
+    margin-top: 20px !important; margin-bottom: 2px !important;
+  }
+  .shop-name__cell {
+    display: block;
+  }
+  .order-number__cell {
+    display: block; text-align: left !important; margin-top: 20px;
+  }
+  .po-number__cell {
+    display: block; text-align: left !important; margin-top: 5px;
+  }
+  .button {
+    width: 100%;
+  }
+  .or {
+    margin-right: 0 !important;
+  }
+  .apple-wallet-button {
+    text-align: center;
+  }
+  .customer-info__item {
+    display: block; width: 100% !important;
+  }
+  .spacer {
+    display: none;
+  }
+  .subtotal-spacer {
+    display: none;
+  }
+  .return__mobile-padding {
+    margin-top: 19px; padding-top: 19px;
+  }
+}
+</style>
+</head>
+<body style=3D"margin: 0;">
+
+
+
+
+ =20
+  <title>
+ =20
+    Thank you for your purchase!
+ =20
+</title>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/=
+>
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width"/>
+ =20
+ =20
+
+
+
+    <table class=3D"body" style=3D"height: 100% !important; width: 100% !im=
+portant; border-spacing: 0; border-collapse: collapse;">
+      <tbody><tr>
+        <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#34;S=
+egoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Ca=
+ntarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Neu=
+e&#34;, sans-serif;">
+          <table class=3D"header row" style=3D"width: 100%; border-spacing:=
+ 0; border-collapse: collapse; margin: 40px 0 20px;">
+  <tbody><tr>
+    <td class=3D"header__cell" style=3D"font-family: -apple-system, BlinkMa=
+cSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;U=
+buntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;,=
+ &#34;Helvetica Neue&#34;, sans-serif;">
+      <center>
+
+        <table class=3D"container" style=3D"width: 560px; text-align: left;=
+ border-spacing: 0; border-collapse: collapse; margin: 0 auto;">
+          <tbody><tr>
+            <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#=
+34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#3=
+4;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica=
+ Neue&#34;, sans-serif;">
+
+              <table class=3D"row" style=3D"width: 100%; border-spacing: 0;=
+ border-collapse: collapse;">
+                <tbody><tr>
+                  <td class=3D"shop-name__cell" style=3D"font-family: -appl=
+e-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Ox=
+ygen&#34;, &#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34=
+;Droid Sans&#34;, &#34;Helvetica Neue&#34;, sans-serif;">
+                      <h1 class=3D"shop-name__text" style=3D"font-weight: n=
+ormal; font-size: 30px; color: #333; margin: 0;">
+                        <img src=3D"https://cdn.shopify.com/s/files/1/0639/=
+2909/0243/files/unnamed.png?v=3D1721230518" width=3D"150"/>
+                      </h1>
+                  </td>
+
+                    <td style=3D"font-family: -apple-system, BlinkMacSystem=
+Font, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#=
+34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;H=
+elvetica Neue&#34;, sans-serif;">
+                      <table class=3D"order-po-number__container" style=3D"=
+border-spacing: 0; border-collapse: collapse; margin-left: auto; margin-rig=
+ht: 0;">
+                        <tbody><tr>
+                          <td class=3D"order-number__cell" style=3D"font-fa=
+mily: -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#3=
+4;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans=
+&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Neue&#34;, sans-serif; text-tra=
+nsform: uppercase; font-size: 14px; color: #999;" align=3D"right">
+                            <span class=3D"order-number__text" style=3D"fon=
+t-size: 16px;">
+<!--                               Order  -->
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </td>
+                </tr>
+              </tbody></table>
+
+            </td>
+          </tr>
+        </tbody></table>
+
+      </center>
+    </td>
+  </tr>
+</tbody></table>
+
+          <table class=3D"row content" style=3D"width: 100%; border-spacing=
+: 0; border-collapse: collapse;">
+  <tbody><tr>
+    <td class=3D"content__cell" style=3D"font-family: -apple-system, BlinkM=
+acSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;=
+Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;=
+, &#34;Helvetica Neue&#34;, sans-serif; padding-bottom: 40px; border-width:=
+ 0;">
+      <center>
+        <table class=3D"container" style=3D"width: 560px; text-align: left;=
+ border-spacing: 0; border-collapse: collapse; margin: 0 auto;">
+          <tbody><tr>
+            <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#=
+34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#3=
+4;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica=
+ Neue&#34;, sans-serif;">
+             =20
+            <p style=3D"color: #777; line-height: 150%; font-size: 16px; ma=
+rgin: 0;">Shabbir Jivani,</p>
+            <p style=3D"color: #777; line-height: 150%; font-size: 16px; ma=
+rgin: 15px 0 0;">Thank you for your order from Jafferjees estore. Once your=
+ package ships we will send an email with a link to track your order. If yo=
+u have questions about your order, you can email us at <a href=3D"mailto:cu=
+stomerservice@jafferjees.com" target=3D"_blank" style=3D"font-size: 16px; t=
+ext-decoration: none; color: #1990C6;">customerservice@jafferjees.com</a>.<=
+/p>
+              <br/>
+
+            <h2 style=3D"font-weight: normal; font-size: 24px; margin: 0 0 =
+10px;">Your Order 20464</h2>
+<br/>
+            <p style=3D"color: #777; line-height: 150%; font-size: 16px; ma=
+rgin: 0;">Placed on 2025-05-11 01:35:38 +0500</p>
+<br/>
+
+          <table class=3D"row section" style=3D"width: 100%; border-spacing=
+: 0; border-collapse: collapse;">
+  <tbody><tr>
+    <td class=3D"section__cell" style=3D"font-family: -apple-system, BlinkM=
+acSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;=
+Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;=
+, &#34;Helvetica Neue&#34;, sans-serif; padding: 40px 0;">
+      <center>
+        <table class=3D"container" style=3D"width: 560px; text-align: left;=
+ border-spacing: 0; border-collapse: collapse; margin: 0 auto;">
+          <tbody><tr>
+            <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#=
+34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#3=
+4;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica=
+ Neue&#34;, sans-serif;">
+             =20
+            <table class=3D"row" style=3D"width: 100%; border-spacing: 0; b=
+order-collapse: collapse;">
+              <tbody><tr>
+               =20
+                  <td class=3D"customer-info__item" style=3D"font-family: -=
+apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#3=
+4;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, =
+&#34;Droid Sans&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding-bottom:=
+ 40px; width: 50%;" valign=3D"top">
+                    <h4 style=3D"font-weight: 500; font-size: 16px; color: =
+#555; margin: 0 0 5px;">Shipping address</h4>
+                    <p style=3D"color: #777; line-height: 150%; font-size: =
+16px; margin: 0;">Shabbir Jivani<br/>B-506, Shumail Terrace<br/>Manakjee St=
+, Garden East<br/>Karachi <br/>Pakistan</p>
+                  </td>
+               =20
+               =20
+                  <td class=3D"customer-info__item" style=3D"font-family: -=
+apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#3=
+4;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, =
+&#34;Droid Sans&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding-bottom:=
+ 40px; width: 50%;" valign=3D"top">
+                    <h4 style=3D"font-weight: 500; font-size: 16px; color: =
+#555; margin: 0 0 5px;">Billing address</h4>
+                    <p style=3D"color: #777; line-height: 150%; font-size: =
+16px; margin: 0;">Shabbir Jivani<br/>B-506, Shumail Terrace<br/>Manakjee St=
+, Garden East<br/>Karachi <br/>Pakistan</p>
+                  </td>
+               =20
+              </tr>
+            </tbody></table>
+            <table class=3D"row" style=3D"width: 100%; border-spacing: 0; b=
+order-collapse: collapse;">
+              <tbody><tr>
+               =20
+               =20
+              </tr>
+              <tr>
+               =20
+                 =20
+                    <td class=3D"customer-info__item" style=3D"font-family:=
+ -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &=
+#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;=
+, &#34;Droid Sans&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding-botto=
+m: 40px; width: 50%;" valign=3D"top">
+                      <h4 style=3D"font-weight: 500; font-size: 16px; color=
+: #555; margin: 0 0 5px;">Shipping method</h4>
+                        <p style=3D"color: #777; line-height: 150%; font-si=
+ze: 16px; margin: 0;">
+                         =20
+                            Standard
+                         =20
+                        </p>
+                    </td>
+                 =20
+               =20
+              </tr>
+            </tbody></table>
+
+            </td>
+          </tr>
+        </tbody></table>
+      </center>
+    </td>
+  </tr>
+</tbody></table>
+
+<table class=3D"row section" style=3D"width: 100%; border-spacing: 0; borde=
+r-collapse: collapse;">
+  <tbody><tr>
+    <td class=3D"section__cell" style=3D"border-left-width: 1px; border-lef=
+t-color: #d1d1d1; border-left-style: solid; border-right-width: 1px; border=
+-right-color: #d1d1d1; border-right-style: solid; font-family: -apple-syste=
+m, BlinkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#3=
+4;, &#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid =
+Sans&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 0;">
+      <center>
+        <table class=3D"container" style=3D"width: 100% !important; text-al=
+ign: left; border-spacing: 0; border-collapse: collapse; margin: 0;">
+          <tbody><tr>
+    <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe=
+ UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Cantar=
+ell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Neue&#3=
+4;, sans-serif;">
+             =20
+           =20
+<table class=3D"row" style=3D"width: 100%; border-spacing: 0; border-collap=
+se: collapse;">
+
+  </table><table class=3D"table-tabular" style=3D"width: 100%; border-spaci=
+ng: 0; border-collapse: collapse; margin: 0;">
+   <thead>
+      <tr style=3D"border-top-width: 1px; border-top-color: #d1d1d1; border=
+-top-style: solid; border-bottom-width: 1px; border-bottom-color: #d1d1d1; =
+border-bottom-style: solid; padding: 0 5px;" bgcolor=3D"#f2f2f2">
+         <th style=3D"padding: 10px 5px;">Item</th>
+         <th style=3D"padding: 10px 5px;">Qty</th>
+         <th style=3D"padding: 10px 5px;" align=3D"right">Price</th>
+      </tr>
+   </thead>
+    <tbody style=3D"padding: 0 5px;">
+     =20
+      <tr>
+     <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#34;Sego=
+e UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Canta=
+rell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Neue&#=
+34;, sans-serif; padding: 0 5px;">
+<strong style=3D"font-size: 16px; color: #555;">Las Vegas Wallet - Maroon A=
+ntique -45</strong><br/>SKU: 000589-004-020-11<br/>
+     Maroon Antique 45
+       <br/>
+          =20
+          =20
+            <ul>
+           =20
+   =20
+      <li>Name: </li>
+   =20
+  </ul>
+</td>
+
+         <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#34;=
+Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;C=
+antarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Ne=
+ue&#34;, sans-serif; padding: 0 5px;">1</td>
+         <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#34;=
+Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;C=
+antarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Ne=
+ue&#34;, sans-serif; padding: 0 5px;" align=3D"right">
+            Rs.3,825.00
+         </td>
+      </tr>
+     =20
+     =20
+   </tbody>
+</table>
+ =20
+</td></tr></tbody></table>
+
+            <table class=3D"row subtotal-lines" style=3D"width: 100%; borde=
+r-spacing: 0; border-collapse: collapse; border-top-width: 1px; border-top-=
+color: #e5e5e5; border-top-style: solid; margin: 0; padding: 0 5px;" bgcolo=
+r=3D"#f2f2f2">
+  <tbody><tr>
+    <td class=3D"subtotal-spacer" style=3D"font-family: -apple-system, Blin=
+kMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#3=
+4;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#3=
+4;, &#34;Helvetica Neue&#34;, sans-serif; width: 40%;"></td>
+    <td style=3D"font-family: -apple-system, BlinkMacSystemFont, &#34;Segoe=
+ UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, &#34;Ubuntu&#34;, &#34;Cantar=
+ell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans&#34;, &#34;Helvetica Neue&#3=
+4;, sans-serif; padding: 0 5px;">
+      <table class=3D"row subtotal-table" style=3D"width: 100%; border-spac=
+ing: 0; border-collapse: collapse; margin-top: 20px;">
+
+       =20
+
+
+
+
+
+
+
+
+<tbody><tr class=3D"subtotal-line">
+  <td class=3D"subtotal-line__title" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, =
+&#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans=
+&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 2px 0;">
+    <p style=3D"color: #777; line-height: 1.2em; font-size: 16px; margin: 4=
+px 0 0;">
+      <span style=3D"font-size: 16px;">Subtotal</span>
+    </p>
+  </td>
+  <td class=3D"subtotal-line__value" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, =
+&#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans=
+&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 2px 0;" align=3D"righ=
+t">
+      <strong style=3D"font-size: 16px; color: #555;">Rs.3,825.00</strong>
+  </td>
+</tr>
+
+
+       =20
+
+       =20
+         =20
+ =20
+<tr class=3D"subtotal-line">
+  <td class=3D"subtotal-line__title" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, =
+&#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans=
+&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 2px 0;">
+    <p style=3D"color: #777; line-height: 1.2em; font-size: 16px; margin: 4=
+px 0 0;">
+      <span style=3D"font-size: 16px;">Shipping</span>
+    </p>
+  </td>
+  <td class=3D"subtotal-line__value" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, =
+&#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans=
+&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 2px 0;" align=3D"righ=
+t">
+      <strong style=3D"font-size: 16px; color: #555;">Rs.199.00</strong>
+  </td>
+</tr>
+
+
+
+       =20
+
+<!--        =20
+
+       =20
+<tr class=3D"subtotal-line">
+  <td class=3D"subtotal-line__title">
+    <p>
+      <span>Taxes</span>
+    </p>
+  </td>
+  <td class=3D"subtotal-line__value">
+      <strong>Rs.0.00</strong>
+  </td>
+</tr>
+
+
+         -->
+<!--       </table> -->
+
+     =20
+     =20
+     =20
+
+<!--       <table class=3D"row subtotal-table subtotal-table--total"> -->
+     =20
+       =20
+<tr class=3D"subtotal-line">
+  <td class=3D"subtotal-line__title" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, =
+&#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans=
+&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 2px 0;">
+    <p style=3D"color: #777; line-height: 1.2em; font-size: 16px; margin: 4=
+px 0 0;">
+      <span style=3D"font-size: 16px;">Grand Total</span>
+    </p>
+  </td>
+  <td class=3D"subtotal-line__value" style=3D"font-family: -apple-system, B=
+linkMacSystemFont, &#34;Segoe UI&#34;, &#34;Roboto&#34;, &#34;Oxygen&#34;, =
+&#34;Ubuntu&#34;, &#34;Cantarell&#34;, &#34;Fira Sans&#34;, &#34;Droid Sans=
+&#34;, &#34;Helvetica Neue&#34;, sans-serif; padding: 2px 0;" align=3D"righ=
+t">
+      <strong style=3D"font-size: 16px; color: #555;">Rs.4,024.00 PKR</stro=
+ng>
+  </td>
+</tr>
+
+<!--        =20
+          <div class=3D"payment-terms">
+           =20
+<tr class=3D"subtotal-line">
+  <td class=3D"subtotal-line__title">
+    <p>
+      <span>Total paid today</span>
+    </p>
+  </td>
+  <td class=3D"subtotal-line__value">
+      <strong>Rs.0.00 PKR</strong>
+  </td>
+</tr>
+
+          </div>
+       =20
+     =20
+      </table> -->
+
+<!--      =20
+
+     =20
+     =20
+        <table class=3D"row subtotal-table">
+          <tr><td colspan=3D"2" class=3D"subtotal-table__line"></td></tr>
+          <tr><td colspan=3D"2" class=3D"subtotal-table__small-space"></td>=
+</tr>
+
+         =20
+           =20
+           =20
+         =20
+        </table>
+     =20
+
+
+       -->
+   =20
+ =20
+</tbody></table>
+
+
+            </td>
+          </tr>
+        </tbody></table>
+     =20
+    </center></td>
+  </tr>
+</tbody></table>
+<p style=3D"color: #777; line-height: 150%; font-size: 16px; margin: 10px 0=
+ 0;">
+Thank you, jafferjees estore!
+</p>
+       =20
+
+
+                       =20
+
+
+
+
+</td>
+</tr>
+</tbody></table>
+</center></td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+</body></html>
+--a4964afc2fc15cd2412a50bc09d03ed34055390c5c45765917d03151c22f--
