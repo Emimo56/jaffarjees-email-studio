@@ -1,0 +1,50 @@
+
+## for doing compettive brief
+/marketing:competitive-brief Jafferjees (usa.jafferjees.com), a Pakistani heritage leather goods brand (since 1880, fifth generation) selling to US customers. Affordable-luxury tier, $95-$495+, strict no-refund/exchange-only policy, no existing US affiliate or reseller program.
+
+Cover their full catalog and all customer segments, not just one:
+- Men's: wallets, belts, cardholders, cufflinks, briefcases/document cases
+- Women's: handbags, clutches, crossbody bags (including the "Dinner & Dance" evening-occasion line)
+- Unisex/travel: passport holders, toiletry cases, backpacks, luggage tags
+- Gifting/corporate: free gift wrapping and free name-embossing/engraving on nearly all products, positioned as heirloom/legacy gifts and corporate gifts
+
+Compare against other heritage/premium leather brands competing for these same US buyers, across both genders: Will Leather Goods, Shinola, Saddleback Leather, Bosca, Fossil's leather line, and Cuyana (premium women's leather/accessories with a similar "fewer, better things" heritage-craft angle).
+
+I need this brief to work for two purposes, so write it accordingly:
+1. As a professional document I could show directly to Jafferjees as a credible outside perspective on their US market position (so keep it factual, well-sourced, and non-generic — no filler claims).
+2. As strategic input for my own content/marketing angle — so call out specifically which positioning gaps and messaging angles are unclaimed by competitors, broken out by segment (men's, women's, travel, gifting/corporate), and which of those gaps Jafferjees (or someone marketing Jafferjees) is best placed to own.
+
+Give me: competitor positioning summary, messaging comparison by segment, content gaps/opportunities, and threats — plus a short "unclaimed angles" section at the end naming the 2-3 strongest gaps per segment.
+
+=========================================
+this file competitive-brief-leather-goods.md  has finding and comparison regarding jafferjees and its competitors ,  spin subagents and to check each of its findings and check the comparison table,  bring me the result in a table. 
+===================================================
+/marketing:campaign-plan Promote the New Arrivals collection ahead of two gifting occasions, to our email list.
+
+Products: Horizon Handbag ($260), Noir Clutch ($185), Orbit Handbag ($170), Drift Wallet ($85), Ember Wallet ($85), Ascent Card Case ($85), Roam Keyring ($85), Naxos ($80), Capri ($65) — all from usa.jafferjees.com/collections/new-arrivals.
+
+Audience segments, based on the site’s own nav (Men / Women / Travel / Work / Gift Set — Work is explicitly “for Men & Women,” not men-only; exclude Corporate, that’s a separate B2B inquiry channel, not a retail audience):
+
+Men’s segment → wallets, card case, keyring
+Women’s segment → handbags, clutch
+Gifting segment (either gender) → all items, framed around complimentary gift wrap and engraving
+Timing — run as two separate waves, not one campaign, since they’re on different calendars and have different lead times:
+
+Eid-ul-Fitr wave (expected ~March 9–10, 2027, moon-sighting dependent): 4 weeks of email, starting the first Monday of February 2027.
+Christmas wave (Dec 25): must send much earlier to clear the ~2–3 day processing + up to 15 working days delivery window, plus allow for the 3-working-day exchange deadline if something needs fixing before Christmas. Start this wave in early-to-mid November, not December.
+Copy rules: never guarantee a delivery date — use “order by [date] to receive in time” phrasing tied to the “up to X working days” shipping language, not a promise. Don’t assume or state customers’ religion; segment by occasion/timing, not by inferred religious identity.
+
+Budget: small. Email only, no paid ads. No discount or sale — new arrivals only.
+
+Source of truth: the live site (usa.jafferjees.com) always overrides brand/voice.md, prior findings, or anything stated earlier in this plan. If anything in this brief mismatches the live site when you check it, flag the specific mismatch to me before proceeding — don’t silently correct it.
+
+=========================================================================
+
+Check the campaign plan in campaigns/new-arrivals-Christmas-2026.md. Don’t change any files. Test it, don’t just read it:
+
+1) Does every email in content-calendar tables have a send date, an audience/segment, and a purposs
+2) Search the plan for any word or claim that brand/voice.md says to avoid. Quote every one you find, with its line.
+3) Do the dates fall on the weekdays the plan says? Work it out, don't guess.
+
+Give me a short table: Test | Pass or Fail | What you found.
+Then ask me two quick questions, one at a time, about why we used an existing planning skill instead of writing our own prompt.

@@ -65,7 +65,7 @@ Counting back 21 working days from Dec 24 (the day before Christmas, so an excha
 |---|---|---|---|---|
 | 1 | Mon Nov 9, 2026 | Launch: "New Arrivals are here" | Men's, Women's, Gifting (3 emails) | Send ASAP — every day's delay eats into the Nov 23 cutoff |
 | 2 | Mon Nov 16, 2026 | Segment spotlight + gift-wrap/engraving callout | Men's, Women's, Gifting (3 emails) | |
-| 3 | Thu Nov 19 or Fri Nov 20, 2026 | "Order by Nov 23 to receive in time" reminder | Men's, Women's, Gifting (3 emails) | Final honest-urgency send before cutoff |
+| 3 | Thu Nov 19, 2026 | "Order by Nov 23 to receive in time" reminder | Men's, Women's, Gifting (3 emails) | Final honest-urgency send before cutoff |
 | — | After Nov 23 | No more Christmas delivery-date framing | — | Fine to keep marketing New Arrivals generally, just drop the "in time for Christmas" promise |
 
 ## 6. Content Pieces Needed

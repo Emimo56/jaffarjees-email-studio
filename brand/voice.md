@@ -59,8 +59,11 @@ claims), repair over replace, full-grain, hand-stained / hand-inspected.
 - Made in Pakistan; sold in Pakistan, UK, and USA. (The website itself
   doesn't state country of manufacture — this came directly from the
   business, not the site.)
-- Price tiers: wallets ~$95–135, belts ~$135–185, bags/clutches ~$210–400,
-  briefcases ~$495+.
+- Price tiers: wallets ~$80–110, belts ~$120–185, bags/clutches ~$170–340,
+  briefcases ~$495+. (Corrected 2026-11-08 by checking every item on the
+  live Wallets, Belts, Women, and Work collection pages at
+  usa.jafferjees.com, not just the New Arrivals SKUs — the earlier ranges
+  were stale across all four categories except briefcases.)
 - New collections drop twice a year (Spring/Summer, Fall/Winter).
 - Complimentary gift wrap and name-embossing/engraving on most products —
   this is a good, true thing to highlight.
