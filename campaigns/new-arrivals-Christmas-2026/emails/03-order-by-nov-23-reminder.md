@@ -5,9 +5,9 @@ Hi {{first_name}},
 
 Just a practical note: if you'd like a New Arrivals piece to arrive in time for the holidays, we'd suggest ordering by Monday, November 23.
 
-Processing and shipping take some time to do properly, and we'd rather give you an honest date than a rushed one. Personalized and engraved items take the same craftsmanship and care, so the same date applies to those too.
+Processing and shipping take some time to do properly, and we'd rather give you an honest date than a rushed one.
 
-[Shop New Arrivals](https://usa.jafferjees.com/collections/new-arrivals)
+[Shop in Time for the Holidays](https://usa.jafferjees.com/collections/new-arrivals)
 
 Complimentary gift wrap and engraving are still included, at no extra cost, on most pieces.
 

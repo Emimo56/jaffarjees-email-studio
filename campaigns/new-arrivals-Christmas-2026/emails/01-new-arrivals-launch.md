@@ -3,7 +3,7 @@ Preview: Handcrafted wallets, bags, and gifts, just in from the workshop.
 
 Hi {{first_name}},
 
-Our New Arrivals collection is here, and it's some of our best work yet.
+Our New Arrivals collection is here, and it's full of pieces we're proud to put our name on.
 
 Every piece is handcrafted by our artisans the same way it's been done for five generations, since 1880. Wallets and card cases for everyday carry. New handbags and a clutch. And a couple of ready-made gift sets if you'd rather not have to choose.
 

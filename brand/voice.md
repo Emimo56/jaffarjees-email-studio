@@ -17,6 +17,8 @@ Authentic. Reliable. Not cheap at all — premium, and priced like it.
   department or a bot. For one-to-one service emails (order issues,
   questions, complaints), sign off as "Jafferjees Customer Care" instead —
   warmer than a generic department, but no invented personal names.
+- Precede the sign-off with the closing word "Warmly," for newsletters and
+  campaign emails, so the sign-off doesn't land abruptly.
 
 ## Words we use
 Our own words, already in use on the site and worth repeating consistently:
@@ -61,6 +63,9 @@ claims), repair over replace, full-grain, hand-stained / hand-inspected.
   (not refunds) must be requested within 3 working days of receipt;
   personalized/engraved items are never exchangeable. Re-verify before each
   send, the same as the discount/sale check above.
+- Don't claim personalized/engraved items ship within the same processing
+  window as standard items unless the business confirms it — personalization
+  is an extra production step and may need an earlier order-by cutoff.
 
 ## Useful facts to stay consistent with
 - Made in Pakistan; sold in Pakistan, UK, and USA. (The website itself
