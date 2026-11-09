@@ -1,4 +1,4 @@
-Subject: New Arrivals are here
+Subject: Nine new leather pieces just arrived
 Preview: Handcrafted wallets, bags, and gifts, just in from the workshop.
 
 Hi {{first_name}},
