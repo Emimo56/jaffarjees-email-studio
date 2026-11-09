@@ -54,6 +54,13 @@ claims), repair over replace, full-grain, hand-stained / hand-inspected.
 - Before any email references a discount, sale, or "no current sale," check
   the live site first — pricing/promotions can change without us knowing.
   See `findings/site-inconsistencies.md`.
+- Before any email promises a delivery-by date ("order by X to receive in
+  time"), check current processing and shipping times on the live site/FAQ
+  first — don't assume prior numbers still hold. Last checked 2026-11-08:
+  ~2–3 working days processing + up to 15 working days delivery; exchanges
+  (not refunds) must be requested within 3 working days of receipt;
+  personalized/engraved items are never exchangeable. Re-verify before each
+  send, the same as the discount/sale check above.
 
 ## Useful facts to stay consistent with
 - Made in Pakistan; sold in Pakistan, UK, and USA. (The website itself
