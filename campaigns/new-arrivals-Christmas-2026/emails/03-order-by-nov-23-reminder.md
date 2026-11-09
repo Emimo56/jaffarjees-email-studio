@@ -7,7 +7,9 @@ Just a practical note: if you'd like a New Arrivals piece to arrive in time for 
 
 Processing and shipping take some time to do properly, and we'd rather give you an honest date than a rushed one.
 
-[Shop in Time for the Holidays](https://usa.jafferjees.com/collections/new-arrivals)
+[Shop New Arrivals](https://usa.jafferjees.com/collections/new-arrivals)
+
+This date applies to personalized and engraved pieces too.
 
 Complimentary gift wrap and engraving are still included, at no extra cost, on most pieces.
 
