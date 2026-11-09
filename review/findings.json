@@ -1,47 +1,26 @@
 {
-  "folder": "campaigns/test-bad",
+  "folder": "campaigns/new-arrivals-Christmas-2026",
   "findings": [
     {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 10,
-      "severity": "high",
-      "problem": "A second link to the best-sellers collection still appears in the body. .claude/rules/emails.md requires exactly one main link (to the new-arrivals collection) and says not to include any other links.",
-      "fix": "Delete the entire best-sellers line/link, leaving only the single new-arrivals link."
-    },
-    {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 8,
-      "severity": "medium",
-      "problem": "The link text is still the literal placeholder '[Button text](...)' instead of real call-to-action copy, as required by .claude/rules/emails.md.",
-      "fix": "Replace 'Button text' with real CTA copy, e.g. '[Shop new arrivals](https://usa.jafferjees.com/collections/new-arrivals)'."
-    },
-    {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 10,
-      "severity": "medium",
-      "problem": "The best-sellers link also uses the literal placeholder '[Button text](...)' rather than real CTA copy (in addition to being a disallowed second link).",
-      "fix": "Remove the line entirely per the high-severity finding above; no CTA copy is needed once the link is deleted."
-    },
-    {
-      "file": "campaigns/test-bad/emails/01-bad.md",
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/mens/emails/new-arrivals-christmas-2026-email-drafts.md",
       "line": 1,
       "severity": "medium",
-      "problem": "Subject line 'Big Sale, Don't Miss Out' still asserts a sale without verifying it against the live site, and 'Don't Miss Out' still reads as manufactured urgency, conflicting with brand/voice.md.",
-      "fix": "Verify any sale/discount against the live site first; if none is confirmed, rewrite the subject without sale language or urgency, e.g. referencing the new arrivals collection itself."
+      "problem": "This file sits inside a path matched by .claude/rules/emails.md's glob (campaigns/**/emails/*.md), which declares every matching file 'a finished marketing email' that must follow all the formatting rules (Subject:/Preview: lines, single real CTA markdown link, Warmly+sign-off, exact footer). This is instead a compiled working draft of all 9 emails with none of that formatting.",
+      "fix": "Move this compiled-draft file out of the emails/ folder (e.g. into a sibling drafts/ folder or up one level) so the rule's glob only matches the genuinely finished per-email files."
     },
     {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 2,
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/womens/emails/new-arrivals-christmas-2026-email-drafts.md",
+      "line": 1,
       "severity": "medium",
-      "problem": "Preview text 'Huge savings... this week only' still makes the same unverified sale claim with manufactured urgency, against brand/voice.md.",
-      "fix": "Check the live site for any actual current promotion before mentioning savings; otherwise rewrite without discount or urgency language."
+      "problem": "Same issue as the mens-group draft file: it matches the emails.md rule's glob and is declared a finished marketing email by that rule, but lacks Subject:/Preview: lines, a real CTA markdown link, and the required footer.",
+      "fix": "Relocate out of the emails/ folder so it isn't implicitly held to the finished-email formatting rule."
     },
     {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 15,
-      "severity": "low",
-      "problem": "Footer still uses straight apostrophes ('You're') instead of the exact required footer text in .claude/rules/emails.md, which uses curly apostrophes ('You're').",
-      "fix": "Replace the straight apostrophes with curly apostrophes to match the required footer text exactly."
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/gifting/emails/new-arrivals-christmas-2026-email-drafts.md",
+      "line": 1,
+      "severity": "medium",
+      "problem": "Same issue as the other two group draft files: matches the emails.md rule's glob and is declared a finished marketing email by that rule, but lacks Subject:/Preview: lines, a real CTA markdown link, and the required footer.",
+      "fix": "Relocate out of the emails/ folder so it isn't implicitly held to the finished-email formatting rule."
     }
   ]
 }
