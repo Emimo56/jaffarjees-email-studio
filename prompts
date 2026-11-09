@@ -48,3 +48,97 @@ Check the campaign plan in campaigns/new-arrivals-Christmas-2026.md. Don’t cha
 
 Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time, about why we used an existing planning skill instead of writing our own prompt.
+
+==============================================================
+/marketing:draft-content
+Draft the copy for all 9 New Arrivals emails from campaigns/new-arrivals-Christmas-2026.md —
+3 segments (Men's, Women's, Gifting) × 3 send dates (Mon Nov 9, Mon Nov 16, Thu Nov 19, 2026).
+
+Follow these sources exactly:
+- brand/voice.md for tone, words-we-use, words-to-avoid, and sign-off rules
+  ("The Jafferjees Family" for all 9, since these are campaign sends, not
+  service emails).
+- The project CLAUDE.md rule: plain English, no jargon, no corporate-speak,
+  drafts only — these are not to be sent to real people.
+- campaigns/new-arrivals-Christmas-2026.md sections 2 (segments/products/
+  prices), 3 (key messages), and 5 (content calendar) for which products,
+  framing, and send-week purpose apply to each email.
+- findings/jafferjees-own-vocabulary.md for Jafferjees' own product-copy
+  patterns (DETAILS/FEATURES structure, naming system) and which heritage
+  words actually appear on the live site.
+- findings/competitor-vocabulary-gap.md for the competitor words that are
+  safe to borrow (passed down, patina, full-grain, hand-stained/hand-inspected).
+- findings/site-inconsistencies.md for facts to get right: no warranty/
+  guarantee/loyalty program exists, "since 1880" not "140 years," no
+  discount language unless re-verified, "handcrafted" never "handmade."
+- findings/order-20464-voice-findings.md for the specific voice mistakes
+  (generic greeting, blank personalization, generic sign-off) found in a
+  real past service email — don't repeat them here.
+- notes/competitive-brief-leather-goods.md and
+  notes/competitive-brief-fact-check.md for unclaimed positioning angles
+  worth reusing (e.g. travel-city naming, Dinner & Dance) where relevant.
+- leads/leads.csv and leads/CLAUDE.md for how segment/consent fields are
+  structured, so personalization placeholders match real field names —
+  but do not use any real name/email from that file in the drafts, and
+  remember every address there is a fake @example.com practice record.
+
+For each of the 9 emails give: subject line, preview text, body copy, and
+CTA, matching the Week 1 (launch), Week 2 (segment spotlight + gift-wrap/
+engraving), and Week 3 (order-by-Nov-23 reminder) purpose from the content
+calendar. Week 3 must use "order by Nov 23 to receive in time" phrasing,
+never a guaranteed delivery date. Never say discount/sale, warranty/
+guarantee/lifetime, handmade, or "return." Flag anything you're unsure is
+brand-safe instead of guessing.
+
+=============================================================================
+
+Create my own skill for this project at .claude/skills/personalize/SKILL.md.
+
+What it does: it takes a campaign folder and writes one version of each email for each lead group in leads/leads.csv (men, women and gifting). Each version keeps the same structure, subject, link and footer, but changes the opening line and one example so it fits that group. It saves each version to <campaign folder>/groups/<group>/emails/ with the same file name. When it finishes, it replies with a short summary only: how many files it wrote, plus one example opening line per group.
+
+Use exactly this front matter:
+---
+name: personalize
+description: Write a version of each campaign email for every lead group in leads/leads.csv. Use when a campaign's emails are final and you want one copy per group.
+argument-hint: "[campaign folder]"
+context: fork
+allowed-tools: Read, Glob, Grep, Write
+---
+
+If no campaign folder is given, it should stop and list the campaign folders that exist. Commit when you're done.
+
+==================================================================================
+
+/marketing:email-sequence new arrivals launch sequence for Jafferjees , sent to everyone on our waitlist.
+
+Use campaigns/new-arrivals-Christmas-2026/plan-new-arrivals-Christmas-2026.md for the goal, timing and key messages, and brand/voice.md for our voice. Write 3 emails.
+
+Save each email as its own file incampaigns/new-arrivals-Christmas-2026/emails/, named 01-short-name.md, 02-short-name.md, and so on. Then commit.
+
+===========================================================================================
+
+Test the emails incampaigns/new-arrivals-Christmas-2026/emails/. Don't change any files. Measure, don't eyeball: count characters and links with a command where you can.
+
+For each email file, check:
+1. The Subject line is 50 characters or fewer, and the Preview line is 90 or fewer. Give the real counts.
+2. It greets the reader with {{first_name}}.
+3. It has exactly one link.
+4. It ends with a sign-off from brand/voice.md and the exact footer from .claude/rules/emails.md, as plain text.
+5. It uses no word or claim that brand/voice.md says to avoid.
+
+Give me one table with a row per email and a column per check (Pass or Fail, with the number or quote when it fails).
+Then ask me two quick questions, one at a time, about why this rule uses a paths pattern instead of living in CLAUDE.md.
+
+=================================================================================
+/marketing:email-sequence new arrivals launch sequence for Jafferjees , sent to everyone on our waitlist.
+
+Use campaigns/new-arrivals-Christmas-2026/plan-new-arrivals-Christmas-2026.md for the goal, timing and key messages, and brand/voice.md for our voice. Write 3 emails.
+
+Save each email as its own file incampaigns/new-arrivals-Christmas-2026/emails/, named 01-short-name.md, 02-short-name.md, and so on. Then commit.
+==========================================================================
+
+/marketing:brand-review campaigns/new-arrivals-Christmas-2026/emails/
+
+Review all three emails against brand/voice.md and .claude/rules/emails.md. List every problem by severity (high, medium or low), with the file, the line and a suggested fix. Don't change any files yet.
+
+=================================================================================
