@@ -1,26 +1,40 @@
 {
-  "folder": "campaigns/new-arrivals-Christmas-2026",
+  "folder": "campaigns/test-bad",
   "findings": [
     {
-      "file": "campaigns/new-arrivals-Christmas-2026/groups/mens/emails/new-arrivals-christmas-2026-email-drafts.md",
-      "line": 1,
-      "severity": "medium",
-      "problem": "This file sits inside a path matched by .claude/rules/emails.md's glob (campaigns/**/emails/*.md), which declares every matching file 'a finished marketing email' that must follow all the formatting rules (Subject:/Preview: lines, single real CTA markdown link, Warmly+sign-off, exact footer). This is instead a compiled working draft of all 9 emails with none of that formatting.",
-      "fix": "Move this compiled-draft file out of the emails/ folder (e.g. into a sibling drafts/ folder or up one level) so the rule's glob only matches the genuinely finished per-email files."
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 6,
+      "severity": "high",
+      "problem": "\"we guarantee you'll love it or your money back\" uses the banned word \"guarantee\" and promises a refund, contradicting Jafferjees' strict no-refund, exchange-only policy.",
+      "fix": "Remove the guarantee/money-back language entirely, or replace with exchange-safe phrasing that doesn't imply any refund."
     },
     {
-      "file": "campaigns/new-arrivals-Christmas-2026/groups/womens/emails/new-arrivals-christmas-2026-email-drafts.md",
-      "line": 1,
-      "severity": "medium",
-      "problem": "Same issue as the mens-group draft file: it matches the emails.md rule's glob and is declared a finished marketing email by that rule, but lacks Subject:/Preview: lines, a real CTA markdown link, and the required footer.",
-      "fix": "Relocate out of the emails/ folder so it isn't implicitly held to the finished-email formatting rule."
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 10,
+      "severity": "high",
+      "problem": "The main CTA link still reads literally \"[Button text](https://usa.jafferjees.com/collections/new-arrivals)\" — the placeholder \"Button text\" was never replaced with real call-to-action copy, as required by .claude/rules/emails.md.",
+      "fix": "Replace \"Button text\" with real CTA copy, e.g. \"Shop the new arrivals\"."
     },
     {
-      "file": "campaigns/new-arrivals-Christmas-2026/groups/gifting/emails/new-arrivals-christmas-2026-email-drafts.md",
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 12,
+      "severity": "high",
+      "problem": "A second link (also still literally \"[Button text](...)\") points to the best-sellers collection, violating the .claude/rules/emails.md requirement of exactly one main link with no other links in the body, and also leaves the placeholder text unreplaced.",
+      "fix": "Delete this sentence and link entirely so only the single new-arrivals CTA remains."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
       "line": 1,
       "severity": "medium",
-      "problem": "Same issue as the other two group draft files: matches the emails.md rule's glob and is declared a finished marketing email by that rule, but lacks Subject:/Preview: lines, a real CTA markdown link, and the required footer.",
-      "fix": "Relocate out of the emails/ folder so it isn't implicitly held to the finished-email formatting rule."
+      "problem": "Subject \"Big Sale, Don't Miss Out\" and preview \"Huge savings... this week only\" reference a sale/discount without the required live-site verification, and use manufactured urgency (\"Don't Miss Out\", \"this week only\") that brand/voice.md explicitly prohibits.",
+      "fix": "Verify any current promotion on the live site before referencing a sale; rewrite subject/preview in the warm, non-pushy heritage voice without artificial urgency."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 17,
+      "severity": "low",
+      "problem": "Footer uses straight apostrophes (\"You're\", \"you're\") instead of the exact curly-apostrophe text (\"You're\", \"you're\") specified verbatim in .claude/rules/emails.md.",
+      "fix": "Replace straight apostrophes with curly apostrophes to match the required footer text exactly."
     }
   ]
 }

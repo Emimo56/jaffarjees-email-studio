@@ -5,7 +5,7 @@ Hi {{first_name}},
 
 We're so excited to tell you about our new collection of bags and wallets. Every piece is handcrafted with the same care Jafferjees has put into leather goods since 1880, and we guarantee you'll love it or your money back.
 
-Every bag comes with a lifetime warranty, so it's built to last for life.
+Every bag is handcrafted from full-grain leather, built the way we've always built them.
 
 Check out the new arrivals here: [Button text](https://usa.jafferjees.com/collections/new-arrivals)
 
