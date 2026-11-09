@@ -187,3 +187,17 @@ Each finding has file, line (a number), severity ("high", "medium" or "low"), pr
 4. Run it on campaigns/new-arrivals-Christmas-2026 too, then commit everything.
 
 Tell me what each run found and what exit code it gave.
+================================================================================
+
+Improve scripts/review.mjs so a second review doesn't repeat itself.
+
+If review/findings.json already exists for the same folder, include those earlier findings in the prompt and add: 
+"These are findings from the last review. Report only problems that are new or still not fixed. 
+Don't repeat ones that have been fixed." To make that work, save the folder name inside review/findings.json too.
+
+Then test it:
+1. Run node scripts/review.mjs campaigns/test-bad and note the findings.
+2. Fix only the lifetime guarantee claim in campaigns/test-bad/emails/01-bad.md (change it to something allowed).
+3. Run the review again on campaigns/test-bad.
+Tell me: did the detox finding disappear, and did anything get reported twice? Commit when done.
+

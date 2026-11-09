@@ -1,3 +1,47 @@
 {
-  "findings": []
+  "folder": "campaigns/test-bad",
+  "findings": [
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 10,
+      "severity": "high",
+      "problem": "A second link to the best-sellers collection still appears in the body. .claude/rules/emails.md requires exactly one main link (to the new-arrivals collection) and says not to include any other links.",
+      "fix": "Delete the entire best-sellers line/link, leaving only the single new-arrivals link."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 8,
+      "severity": "medium",
+      "problem": "The link text is still the literal placeholder '[Button text](...)' instead of real call-to-action copy, as required by .claude/rules/emails.md.",
+      "fix": "Replace 'Button text' with real CTA copy, e.g. '[Shop new arrivals](https://usa.jafferjees.com/collections/new-arrivals)'."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 10,
+      "severity": "medium",
+      "problem": "The best-sellers link also uses the literal placeholder '[Button text](...)' rather than real CTA copy (in addition to being a disallowed second link).",
+      "fix": "Remove the line entirely per the high-severity finding above; no CTA copy is needed once the link is deleted."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 1,
+      "severity": "medium",
+      "problem": "Subject line 'Big Sale, Don't Miss Out' still asserts a sale without verifying it against the live site, and 'Don't Miss Out' still reads as manufactured urgency, conflicting with brand/voice.md.",
+      "fix": "Verify any sale/discount against the live site first; if none is confirmed, rewrite the subject without sale language or urgency, e.g. referencing the new arrivals collection itself."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 2,
+      "severity": "medium",
+      "problem": "Preview text 'Huge savings... this week only' still makes the same unverified sale claim with manufactured urgency, against brand/voice.md.",
+      "fix": "Check the live site for any actual current promotion before mentioning savings; otherwise rewrite without discount or urgency language."
+    },
+    {
+      "file": "campaigns/test-bad/emails/01-bad.md",
+      "line": 15,
+      "severity": "low",
+      "problem": "Footer still uses straight apostrophes ('You're') instead of the exact required footer text in .claude/rules/emails.md, which uses curly apostrophes ('You're').",
+      "fix": "Replace the straight apostrophes with curly apostrophes to match the required footer text exactly."
+    }
+  ]
 }

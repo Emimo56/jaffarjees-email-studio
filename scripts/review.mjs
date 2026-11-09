@@ -19,7 +19,23 @@ const schemaPath = join(repoRoot, "review", "findings.schema.json");
 // Minified (no embedded newlines) so shell quoting below stays reliable.
 const schemaText = JSON.stringify(JSON.parse(readFileSync(schemaPath, "utf8")));
 
-const prompt = `Review every email in ${folder} against brand/voice.md and .claude/rules/emails.md. Report only real problems.`;
+const findingsPath = join(repoRoot, "review", "findings.json");
+let previousFindings = null;
+try {
+  const previous = JSON.parse(readFileSync(findingsPath, "utf8"));
+  if (previous.folder === folder && Array.isArray(previous.findings)) {
+    previousFindings = previous.findings;
+  }
+} catch {
+  // No previous findings file, or it's unreadable/invalid — treat as a first review.
+}
+
+let prompt = `Review every email in ${folder} against brand/voice.md and .claude/rules/emails.md. Report only real problems.`;
+if (previousFindings) {
+  prompt +=
+    ` These are findings from the last review: ${JSON.stringify(previousFindings)}. ` +
+    "Report only problems that are new or still not fixed. Don't repeat ones that have been fixed.";
+}
 
 // Quote an argument for the platform's default shell (spawnSync with
 // shell:true on Windows uses cmd.exe, which needs different escaping than
@@ -85,8 +101,8 @@ const findings = structuredOutput.findings;
 
 mkdirSync(join(repoRoot, "review"), { recursive: true });
 writeFileSync(
-  join(repoRoot, "review", "findings.json"),
-  JSON.stringify(structuredOutput, null, 2) + "\n"
+  findingsPath,
+  JSON.stringify({ folder, ...structuredOutput }, null, 2) + "\n"
 );
 
 const counts = { high: 0, medium: 0, low: 0 };

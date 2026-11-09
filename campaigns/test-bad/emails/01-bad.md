@@ -3,7 +3,7 @@ Preview: Huge savings on bags and wallets this week only
 
 Hi {{first_name}},
 
-We're so excited to tell you about our new collection of bags and wallets. Every single piece comes with a full lifetime guarantee, so if anything ever goes wrong, we'll replace it for free, no questions asked.
+We're so excited to tell you about our new collection of bags and wallets. Every piece is handcrafted with the same care Jafferjees has put into leather goods since 1880.
 
 Check out the new arrivals here: [Button text](https://usa.jafferjees.com/collections/new-arrivals)
 
