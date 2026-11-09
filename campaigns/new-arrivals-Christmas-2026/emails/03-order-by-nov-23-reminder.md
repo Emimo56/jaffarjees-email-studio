@@ -9,7 +9,7 @@ Processing and shipping take some time to do properly, and we'd rather give you 
 
 [Shop New Arrivals](https://usa.jafferjees.com/collections/new-arrivals)
 
-This date applies to personalized and engraved pieces too.
+Personalized and engraved pieces may need a little extra time to produce, so if you're ordering one of those, we'd suggest getting in touch first to confirm timing.
 
 Complimentary gift wrap and engraving are still included, at no extra cost, on most pieces.
 

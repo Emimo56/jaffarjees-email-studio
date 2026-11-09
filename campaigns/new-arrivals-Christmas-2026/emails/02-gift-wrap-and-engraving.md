@@ -11,7 +11,7 @@ It's a small thing, but it's one we've always done, and it's there whether you'r
 
 [See the Collection](https://usa.jafferjees.com/collections/new-arrivals)
 
-Every piece is still handcrafted the way it's been done at Jafferjees since 1880, five generations in.
+Every piece is still handcrafted the way it's been done at Jafferjees since 1880, fifth generation now.
 
 Warmly,
 The Jafferjees Family
