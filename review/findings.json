@@ -1,40 +1,33 @@
 {
-  "folder": "campaigns/test-bad",
+  "folder": "campaigns/new-arrivals-Christmas-2026",
   "findings": [
     {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 6,
-      "severity": "high",
-      "problem": "\"we guarantee you'll love it or your money back\" uses the banned word \"guarantee\" and promises a refund, contradicting Jafferjees' strict no-refund, exchange-only policy.",
-      "fix": "Remove the guarantee/money-back language entirely, or replace with exchange-safe phrasing that doesn't imply any refund."
-    },
-    {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 10,
-      "severity": "high",
-      "problem": "The main CTA link still reads literally \"[Button text](https://usa.jafferjees.com/collections/new-arrivals)\" — the placeholder \"Button text\" was never replaced with real call-to-action copy, as required by .claude/rules/emails.md.",
-      "fix": "Replace \"Button text\" with real CTA copy, e.g. \"Shop the new arrivals\"."
-    },
-    {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 12,
-      "severity": "high",
-      "problem": "A second link (also still literally \"[Button text](...)\") points to the best-sellers collection, violating the .claude/rules/emails.md requirement of exactly one main link with no other links in the body, and also leaves the placeholder text unreplaced.",
-      "fix": "Delete this sentence and link entirely so only the single new-arrivals CTA remains."
-    },
-    {
-      "file": "campaigns/test-bad/emails/01-bad.md",
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/mens/emails/new-arrivals-christmas-2026-email-drafts.md",
       "line": 1,
       "severity": "medium",
-      "problem": "Subject \"Big Sale, Don't Miss Out\" and preview \"Huge savings... this week only\" reference a sale/discount without the required live-site verification, and use manufactured urgency (\"Don't Miss Out\", \"this week only\") that brand/voice.md explicitly prohibits.",
-      "fix": "Verify any current promotion on the live site before referencing a sale; rewrite subject/preview in the warm, non-pushy heritage voice without artificial urgency."
+      "problem": "This file (and the matching womens/gifting copies) sits inside an `emails/` directory, so it matches the `.claude/rules/emails.md` glob `campaigns/**/emails/*.md`, which requires every matching file to be a single finished email (Subject/Preview opening lines, exactly one CTA link, sign-off + exact footer). But this is a multi-email draft/review-notes compilation, not a single finished email, so it fails nearly every rule in that file.",
+      "fix": "Move this file (and `groups/womens/emails/new-arrivals-christmas-2026-email-drafts.md`, `groups/gifting/emails/new-arrivals-christmas-2026-email-drafts.md`) out of any `emails/` directory — e.g. into the campaign root alongside the existing top-level drafts file, or into `notes/` — so the emails.md rule no longer wrongly applies to it."
     },
     {
-      "file": "campaigns/test-bad/emails/01-bad.md",
-      "line": 17,
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/womens/emails/new-arrivals-christmas-2026-email-drafts.md",
+      "line": 1,
+      "severity": "medium",
+      "problem": "Same issue as the mens copy: a multi-email draft/notes doc located inside an `emails/` folder, so it is treated as a finished email by `.claude/rules/emails.md` and fails that rule's format requirements.",
+      "fix": "Move out of the `emails/` directory (e.g. to campaign root or `notes/`)."
+    },
+    {
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/gifting/emails/new-arrivals-christmas-2026-email-drafts.md",
+      "line": 1,
+      "severity": "medium",
+      "problem": "Same issue as the mens/womens copies: a multi-email draft/notes doc located inside an `emails/` folder, so it is treated as a finished email by `.claude/rules/emails.md` and fails that rule's format requirements.",
+      "fix": "Move out of the `emails/` directory (e.g. to campaign root or `notes/`)."
+    },
+    {
+      "file": "campaigns/new-arrivals-Christmas-2026/groups/mens/emails/email-01-launch.md",
+      "line": 13,
       "severity": "low",
-      "problem": "Footer uses straight apostrophes (\"You're\", \"you're\") instead of the exact curly-apostrophe text (\"You're\", \"you're\") specified verbatim in .claude/rules/emails.md.",
-      "fix": "Replace straight apostrophes with curly apostrophes to match the required footer text exactly."
+      "problem": "Pronoun antecedent mismatch: \"The Ascent Card Case is a good place to start if you're after something slim — they're simple, honest pieces...\" singles out one item (\"The Ascent Card Case\") then switches to a plural pronoun (\"they're\"), presumably meaning to refer back to all four pieces. Reads as unclear/ungrammatical, not a brand-voice rule violation per se.",
+      "fix": "Rephrase, e.g.: \"The Ascent Card Case is a good place to start if you're after something slim. All four are simple, honest pieces, finished the way we've worked leather since 1880, fifth generation now.\""
     }
   ]
 }
