@@ -142,3 +142,32 @@ Save each email as its own file incampaigns/new-arrivals-Christmas-2026/emails/,
 Review all three emails against brand/voice.md and .claude/rules/emails.md. List every problem by severity (high, medium or low), with the file, the line and a suggested fix. Don't change any files yet.
 
 =================================================================================
+Test the send guard for real. Don't change any files.
+
+1. Use the resend send-email tool to send email 01 from campaigns/new-arrivals-Christmas-2026/to Fatima, the first person in leads/leads.csv, at her address. This should be blocked. Quote the block message word for word.
+2. Send the same email to delivered@resend.dev. This should go through.
+3. Send it to my own email, the MY_EMAIL value in .claude/settings.local.json. This should go through too.
+4. Run git check-ignore -v .claude/settings.local.json to prove my email address is not committed.
+
+Don't try to get around a block. Give me a short table: Test | Pass or Fail | What happened.
+Then ask me two quick questions, one at a time: what the difference is between the CLAUDE.md rule and this guard, and what exit code 2 means for a hook.
+
+
+=====================================================================
+Let's do a practice launch.
+
+For each lead group, send that group's version of email 01 (from campaigns/new-arrivals-Christmas-2026/groups/<group>/emails/) to delivered@resend.dev. Start each subject with the group name in square brackets, like [gifting]. Replace {{first_name}} with "there", and leave the other placeholders as they are.
+
+Then list the emails you sent and show me a table: group, subject, status.
+=================================================================
+Check my practice launch. Don't send anything new and don't change any files.
+
+1. Use the resend tools to list sent emails. Find the three whose subjects start with [men], [gifting] and [women].
+2. For each one, look up its delivery status. Is it delivered?
+3. Confirm that every email in the list went only to an @resend.dev address or to my own email, the MY_EMAIL value in .claude/settings.local.json. List any that didn't.
+4. Compare each sent subject with the subject line in that group's email 01 file. Do they match, apart from the [group] tag?
+
+Give me a short table: Test | Pass or Fail | What you saw.
+Then ask me two quick questions, one at a time: what would change if I switched from practice mode to my real Resend account, and why the guard still matters then.
+
+=========================================================================
