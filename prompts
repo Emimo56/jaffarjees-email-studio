@@ -171,3 +171,19 @@ Give me a short table: Test | Pass or Fail | What you saw.
 Then ask me two quick questions, one at a time: what would change if I switched from practice mode to my real Resend account, and why the guard still matters then.
 
 =========================================================================
+
+Read campaigns/new-arrivals-Christmas-2026/plan-new-arrivals-Christmas-2026.md and each group's version of email 01. In five short bullets, tell me what each lead group cares about most. Don't write any files.
+
+=====================================================================
+
+Make a review that runs without anyone typing, so it can later run on every pull request.
+
+1. Create review/findings.schema.json: a JSON Schema for an object with a "findings" array. 
+Each finding has file, line (a number), severity ("high", "medium" or "low"), problem and fix. All five are required.
+2. Create scripts/review.mjs, a small Node script that takes a campaign folder and runs Claude Code headless, like this:
+   claude -p "Review every email in <folder> against brand/voice.md and .claude/rules/emails.md. Report only real problems." --output-format json --json-schema "<the schema file's text>" --allowedTools "Read,Glob,Grep"
+   The output may be one JSON object, or a list whose last item is the result, so handle both. Take structured_output, save it to review/findings.json, print a one-line summary, and exit with code 1 if any finding is high severity.
+3. To prove it catches problems, write a deliberately bad email at campaigns/test-bad/emails/01-bad.md. It should break our rules with a guarantee claim, a "lifetime" line and two links. Then run: node scripts/review.mjs campaigns/test-bad
+4. Run it on campaigns/new-arrivals-Christmas-2026 too, then commit everything.
+
+Tell me what each run found and what exit code it gave.

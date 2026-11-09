@@ -1,0 +1,25 @@
+{
+  "findings": [
+    {
+      "file": "campaigns/new-arrivals-Christmas-2026/emails/03-order-by-nov-23-reminder.md",
+      "line": 12,
+      "severity": "high",
+      "problem": "The line \"This date applies to personalized and engraved pieces too.\" directly contradicts brand/voice.md, which says not to claim personalized/engraved items ship within the same processing window as standard items unless the business has confirmed it. No such confirmation exists in the project; the campaign plan's 21-day lead-time math never accounts for extra personalization production time.",
+      "fix": "Remove the claim, or replace it with wording that flags personalized/engraved items may need an earlier cutoff (e.g. 'personalized and engraved pieces may need to be ordered a little earlier — we'll confirm'), per brand/voice.md."
+    },
+    {
+      "file": "campaigns/new-arrivals-Christmas-2026/emails/01-new-arrivals-launch.md",
+      "line": 8,
+      "severity": "low",
+      "problem": "Uses \"five generations\" instead of the brand's documented phrase \"fifth generation,\" which brand/voice.md's 'Words we use' list and the campaign plan's own key messages both specify.",
+      "fix": "Change to \"fifth generation\" (e.g. 'handcrafted by our artisans, fifth generation now, since 1880') to match documented brand vocabulary."
+    },
+    {
+      "file": "campaigns/new-arrivals-Christmas-2026/emails/02-gift-wrap-and-engraving.md",
+      "line": 14,
+      "severity": "low",
+      "problem": "Uses \"five generations in\" instead of the documented brand phrase \"fifth generation.\"",
+      "fix": "Change to use \"fifth generation\" per brand/voice.md's specified vocabulary."
+    }
+  ]
+}

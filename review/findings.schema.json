@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Email Review Findings",
+  "type": "object",
+  "properties": {
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "Path to the file the problem was found in"
+          },
+          "line": {
+            "type": "number",
+            "description": "Line number the problem occurs on"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "problem": {
+            "type": "string",
+            "description": "What's wrong"
+          },
+          "fix": {
+            "type": "string",
+            "description": "How to fix it"
+          }
+        },
+        "required": ["file", "line", "severity", "problem", "fix"]
+      }
+    }
+  },
+  "required": ["findings"]
+}
